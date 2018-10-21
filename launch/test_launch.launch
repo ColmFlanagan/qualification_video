@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<launch>
+
+	<!-- ROSPlan -->
+	<include file="$(find rosplan_planning_system)/launch/interfaced_planning_system.launch" >
+		<!-- <arg name="domain_path"		value="$(find rosplan_demos)/common/domain_turtlebot.pddl" />
+		<arg name="problem_path"	value="$(find rosplan_demos)/common/problem_turtlebot.pddl" /> -->
+		<arg name="domain_path"		value="$(find qualification_video)/pddl/domain.pddl" />
+		<arg name="problem_path"	value="$(find qualification_video)/pddl/problem.pddl" />
+	</include>
+
+	<node name="plan_handle_node" pkg="qualification_video" type="plan_handler_node" output="screen"/>
+
+</launch>
